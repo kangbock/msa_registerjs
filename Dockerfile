@@ -7,9 +7,8 @@ RUN  npm install --save express
 RUN  npm install -y ejs express-session session-file-store
 RUN  wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 
-COPY  nodejs/main3.js /var/task/
-COPY  nodejs/package.js /var/task/
+COPY  nodejs/register.js /var/task/
 
-CMD  [ "node", "main3.js" ]
+CMD  [ "node", "register.js" ]
 
 EXPOSE	3000
