@@ -7,7 +7,7 @@ RUN  npm install --save express
 RUN  npm install -y ejs express-session session-file-store
 RUN  wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 
-COPY  nodejs/register.js /var/task/
+COPY  register.js /var/task/
 
 CMD  [ "node", "register.js" ]
 
