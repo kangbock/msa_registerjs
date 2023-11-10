@@ -52,9 +52,6 @@ connection.changeUser({
     }
     // Do another query
 });
-
-app.set('view engine', 'ejs');
-
     // register controller
 app.post('/register.js',function(req,res){
         // post로 회원가입 정보를 받아온다
@@ -100,6 +97,3 @@ app.get('/health.html',function(req,res,err){
 var server = app.listen(port, function () {
     console.log("Express server has started on port : " + port);
 });
-
-
-app.engine('html',require('ejs').renderFile);
