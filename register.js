@@ -53,6 +53,8 @@ connection.changeUser({
     // Do another query
 });
 
+app.set('view engine', 'ejs');
+
     // register controller
 app.post('/register.js',function(req,res){
         // post로 회원가입 정보를 받아온다
@@ -77,7 +79,7 @@ app.post('/register.js',function(req,res){
                 }
                 else{
                      // insert 쿼리 성공: 성공 창을 띄우고 이전 로그인 페이지로 돌아간다
-                     res.send("<script>alert('success'); location.href='https://www.k-tech.cloud/login.html';</script> ");
+                     res.send("<script>alert('success'); location.href='/login.html';</script> ");
                 }
             });
         }else{
@@ -86,7 +88,7 @@ app.post('/register.js',function(req,res){
                 // + 비밀번호 유효성
                 // + 이메일 유효성
                 // + 전화번호 유효성 검사
-                res.send("<script>alert('중복된 아이디입니다.'); location.href='https://www.k-tech.cloud/register.html';</script> ");
+                res.send("<script>alert('중복된 아이디입니다.'); location.href='/register.html';</script> ");
         }
     })
 });
@@ -100,3 +102,4 @@ var server = app.listen(port, function () {
 });
 
 
+app.engine('html',require('ejs').renderFile);
